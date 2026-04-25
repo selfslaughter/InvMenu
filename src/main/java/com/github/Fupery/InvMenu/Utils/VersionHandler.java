@@ -7,7 +7,7 @@ public enum VersionHandler {
 
     public static VersionHandler getVersion() {
         String bukkit = Bukkit.getBukkitVersion();
-        String[] ver = bukkit.substring(0, bukkit.indexOf('-')).split("\\.");
+        String[] ver = bukkit.split("-")[0].split("\\.build")[0].split("\\.");
         int[] verNumbers = new int[ver.length];
         for (int i = 0; i < ver.length; i++) {
             verNumbers[i] = Integer.parseInt(ver[i]);
